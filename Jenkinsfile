@@ -35,12 +35,11 @@ pipeline{
             }
             
         }
-        stage('deploy to tomcat'){
+        stage('deploy to sonar'){
             
             steps{
-                
-                deploy adapters: [tomcat9(credentialsId: 'tomcat-cred', path: '', url: 'http://54.226.103.114:8080/')], contextPath: 'end-end-end-deployment', war: '**/*.war'
-            }
+                  sh 'sonar:sonar'
+                 }
         }
         
     }
