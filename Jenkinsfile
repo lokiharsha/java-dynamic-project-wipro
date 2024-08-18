@@ -38,7 +38,8 @@ pipeline{
         stage('deploy to sonar'){
             
             steps{
-                  sh 'sonar:sonar'
+                
+                  sh 'mvn sonar:sonar'
                  }
         }
         
