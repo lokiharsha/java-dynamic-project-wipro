@@ -38,7 +38,9 @@ pipeline{
         stage('deploy to sonar'){
             
             steps{
-                  sh 'sonar:sonar'
+                  sh '''
+                sonar-scanner  -DprojectKey=your_project_key -Dsonar.sources=src/main/java
+                  '''
                  }
         }
         
